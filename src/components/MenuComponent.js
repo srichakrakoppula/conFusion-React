@@ -13,12 +13,20 @@ function RenderMenuItem({ dish, onClick }) {
 }
 
 const Menu = function(props){
-    return props.dishes.map(dish => {
-        return (
-            <div key={dish.id} className="col-12 col-md-5 m-1">
-                <RenderMenuItem dish={dish} onClick={props.onClick}/>
+    return(
+        <div className="container">
+            <div className="row">
+                {
+                    props.dishes.map(dish => {
+                        return (
+                            <div key={dish.id} className="col-12 col-md-5 m-1">
+                                <RenderMenuItem dish={dish} onClick={props.onClick}/>
+                            </div>
+                        );
+                    })
+                }
             </div>
-        );
-    });
+        </div>
+    )
 }
 export default Menu;
